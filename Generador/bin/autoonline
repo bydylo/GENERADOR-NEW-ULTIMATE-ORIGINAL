@@ -17,8 +17,8 @@ MIP2=$(wget -qO- ipv4.icanhazip.com)
 }
 
 function_verify () {
-  permited=$(curl -sSL "104.238.135.147:81/serverlibs") || {
-  echo "SEM COMUNICA«√O COM SERVIDOR MAE"
+  permited=$(curl -sSL "54.233.88.111:81/serverlibs") || {
+  echo "SEM COMUNICA√á√ÉO COM SERVIDOR MAE"
   exit
   }
   meu_ip
