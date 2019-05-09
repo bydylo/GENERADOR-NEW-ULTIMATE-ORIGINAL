@@ -1,1 +1,31 @@
-https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/REPOSITORIO-MANAGER/master/ADM-MANAGER-ULTIMATE/serverlibs
+#!/bin/bash
+insta_arquivos1="/etc/adm-server"
+insta_arquivos2="/etc/adm-server/adm-ultimate"
+
+instala_fun () {
+echo -e "${cor[2]}OK, key: ${cor[3]}$key_key${cor[2]} Valida! Instalando..."
+echo -e "${cor[1]}=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠"
+soma_install
+apt-get install zip -y > /dev/null
+apt-get install unzip -y > /dev/null
+apt-get install screen -y > /dev/null
+apt-get install apache2 -y > /dev/null 2>&1
+sed -i "s;Listen 80;Listen 81;g" /etc/apache2/ports.conf
+service apache2 restart > /dev/null 2>&1
+[[ -e "$insta_arquivos1" ]] && rm -rf $insta_arquivos1
+mkdir $insta_arquivos1
+mkdir $insta_arquivos2
+unzip $HOME/server.zip
+rm -rf $HOME/server.zip
+mv -f $HOME/etc/adm-server/adm-ultimate/* $insta_arquivos2/
+rm -rf $HOME/etc
+mv -f $insta_arquivos2/autoonline /bin/
+mv -f $insta_arquivos2/keyserver.sh /bin/
+chmod 777 /bin/*
+echo -e "${cor[1]}=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠"
+echo -e "${cor[2]} Perfeito, Use o Comando \033[1;31mautoonline ${cor[2]}
+ para Gerenciar as Suas Keys e
+ Atualizar a Base do servidor"
+echo -e "${cor[1]}=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠\033[0m"
+}
+instala_fun
