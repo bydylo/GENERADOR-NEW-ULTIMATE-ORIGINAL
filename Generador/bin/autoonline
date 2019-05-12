@@ -53,7 +53,7 @@ dirkey="/etc/adm-server/keys"
 
 atualiza_fun () {
 cd $HOME
-wget https://www.dropbox.com/s/y2oxbunh9huwyb3/instala_server -o /dev/null
+wget https://raw.githubusercontent.com/bydylo/GENERADOR-NEW-ULTIMATE-ORIGINAL/master/instala_server -o /dev/null
 chmod 777 ./instala_server
 ./instala_server
 }
