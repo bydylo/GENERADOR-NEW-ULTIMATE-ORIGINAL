@@ -1,5 +1,5 @@
 #!/bin/bash
-mkdir /etc/adm-server/adm-ultimate
+
 insta_arquivos="/etc/adm-server/adm-ultimate"
 
 start_listen () {
